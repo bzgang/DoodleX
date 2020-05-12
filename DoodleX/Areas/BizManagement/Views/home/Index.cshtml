@@ -1,0 +1,28 @@
+﻿@using System.Web.Optimization;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@Scripts.Render("~/bundles/Mytestjs")
+@{
+    var r = Math.Round(99999.00);
+
+
+}
+<script src="~/bundles/Mytestjs?V=@DateTime.Now.Ticks"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>一个区域视图</title>
+</head>
+<body>
+    <div>
+        <h1>一个区域视图</h1>
+        @ViewBag.pageFlage
+        <p><a class="btn btn-default" href="@Url.Action("ExportToExcel")">导出Excel</a></p>
+        <p><a class="btn btn-default" href="@Url.Action("ExportToExcel2")">导出Excel-NPOI</a></p>
+        <p><a class="btn btn-default" href="@Url.Action("exExcel")">导出Excel-NPOI</a></p>
+    </div>
+</body>
+</html>

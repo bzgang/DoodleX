@@ -1,0 +1,380 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutPop.cshtml";
+    ViewBag.Title = "内容编辑页";
+}
+<div id="editForm">
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a class="navbar-brand" href="javascript:void(0);">【------】添加</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="active">
+                    <a href="#processmodel" data-toggle="modal">返回</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="page-content" style="margin-top:-15px;">
+
+        <div class="container">
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="widget-box">
+                            <div class="widget-header">
+                                <h4>基本信息</h4>
+                                <div class="widget-toolbar">
+                                    <a href="#" data-action="collapse">
+                                        <i class="icon-chevron-up"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <div class="row">
+
+                                        <div class="col-md-4 form-group">
+                                            <label class="control-label">用户名：</label>
+                                            <input type="text" />
+                                        </div>
+
+
+                                        <div class="col-md-4 form-group">
+                                            <label class=" control-label">所属部门：</label>
+                                            <input type="text" />
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+                                            <label class=" control-label">职位：</label>
+                                            <input type="text" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="widget-box">
+                            <div class="widget-header">
+                                <h4>表单信息</h4>
+                                <div class="widget-toolbar">
+                                    <a href="#" data-action="collapse">
+                                        <i class="icon-chevron-up"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <div class="widget-main">
+
+                                    <div class="row">
+                                        <div class="col-md-4 form-group">
+                                            <label class="control-label">报销单号：</label>
+                                            <input type="text" />
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+                                            <label class="control-label">报销日期：</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div class="col-md-4 form-group">
+                                            <label class="control-label">&nbsp;公&nbsp;&nbsp;&nbsp;&nbsp;司 ：&nbsp;&nbsp;</label>
+                                            <select><option>a</option><option>b</option></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 form-group">
+                                            <label class="control-label">申请部门：</label>
+                                            <select><option>aa</option><option>bb</option></select>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+                                            <label class="control-label">&nbsp;申&nbsp;请&nbsp;人：&nbsp;</label>
+                                            <input type="text" />
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+                                            <label class="control-label">申请手机：</label>
+                                            <input type="text" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+
+                                        <div class="col-md-4 form-group">
+                                            <label class="control-label">成本中心：</label>
+
+                                            <input type="text" />
+
+                                        </div>
+
+
+                                        <div class="col-md-4 form-group">
+                                            <label class="control-label">&nbsp;项&nbsp;目&nbsp;号：&nbsp;</label>
+
+                                            <input type="text" />
+
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+                                            <label class="control-label">项目名称：</label>
+                                            <input type="text" />
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4 form-group">
+                                            <label class="control-label">有无发票：</label>
+                                            <select><option>请选择</option><option>有发票</option><option>无发票</option></select>
+                                        </div>
+                                        <div id="Check_Mod" class="col-md-4 form-group">
+                                            <label class="control-label">报销方式：</label>
+                                            <input type="text" />
+                                            <abbr title="点击查看说明">说明</abbr>
+                                        </div>
+                                        <div class="col-md-4 form-group">
+                                            <label class="control-label">&nbsp;支&nbsp;票&nbsp;号：&nbsp;</label>
+                                            <input type="text" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="widget-box">
+                            <div class="widget-header">
+                                <h4>费用明细</h4>
+                                <div class="widget-toolbar">
+                                    <a href="#" data-action="collapse">
+                                        <i class="icon-chevron-up"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <div class="row form-group" id="bx_zhusu" style="margin-bottom: 0px;">
+                                        <div class="2">
+                                            <div class="table-header" style="font-size:12px;line-height:22px">
+                                                <a class="white " href="javascript:void(0)" v-on:click="addCounter">
+                                                    <i class="icon-plus-sign  bigger-110">新增</i>
+                                                </a> &nbsp;&nbsp;
+                                                <a class="white " href="javascript:void(0)" v-on:click="SaveCounter">
+                                                    <i class="glyphicon-save  bigger-110">新增</i>
+                                                </a> &nbsp;&nbsp;
+                                            </div>
+
+                                            <div class="table-responsive">
+
+                                                <table class="table table-striped table-hover table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width: 4%;">编号</th>
+                                                            <th style="width: 9%;">报销类别</th>
+                                                            <th style="width: 25%;">差旅报销单号</th>
+                                                            <th style="width: 35%;">说明</th>
+                                                            <th style="width: 10%;">票数</th>
+                                                            <th style="width: 10%;" id="thJe">金额</th>
+                                                            <th style="width: 15%;">操作</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="SignFrame" class="bx_tablebody">
+                                                        <tr is="button-counter" class="zhusu_tablefoot"
+                                                            v-for="(item,index) in counter" v-bind:key="item.nums" v-bind:nums="item.nums"></tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" panel-footer">
+                                    <div class="row">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row text-center">
+        <button type="submit" id="btn_submit" class="btn btn-primary" href="#alertmodal" data-toggle="modal">提交</button>
+        <button type="submit" id="btn_save" class="btn btn-primary" href="#confirmodal" data-toggle="modal">保存</button>
+    </div>
+
+
+    <div class="modal fade" id="alertmodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">消息提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="alertmsg">提交弹窗</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal">确定</button>
+                    <button type="submit" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+
+    <div class="modal fade" id="confirmodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">消息提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="confirmtext">您确定提交该流程吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="confirmodal_ok" class="btn btn-primary" data-dismiss="modal">确定</button>
+                    <button type="submit" id="confirmodal_cancel" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <div class="modal fade" id="processmodel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>数据处理中...</p>
+                    @*<img src="../../Images/loading.gif" style="width: 100%; height: 20px;" />*@
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+</div>
+
+<template id="frameTr">
+    <tr>
+        <td style="width: 60px; text-align: center;" style="width: 4%;">
+            <input name='txtTRLastIndex' type='hidden' id='txtTRLastIndex' value="1" />
+            <span style="cursor: pointer;">{{nums+1}}</span>
+        </td>
+        <td style="width: 9%;">
+            <select v-model="InfoList.category">
+                <option value="0">默认-请选择1-{{nums+1}}</option>
+                <option value="1">请选择2-{{nums+1}}</option>
+                <option value="2">请选择3-{{nums+1}}</option>
+                <option value="3">请选择4-{{nums+1}}</option>
+                <option value="4">请选择5-{{nums+1}}</option>
+                <option value="5">请选择6-{{nums+1}}</option>
+            </select>
+        </td>
+        <th style="width: 25%;"> <input type="text" style="width:100%" v-model="InfoList.po" /></th>
+        <th style="width: 35%; "> <input type="text" style="width:100%" v-model="InfoList.content" /></th>
+        <th style="width: 10%;"> <input type="text" style="width:100%" v-model="InfoList.votes" /></th>
+        <th style="width: 10%;"> <input type="text" style="width:100%" v-model="InfoList.count" /></th>
+        <th style="width: 15%;">
+
+            <a href="javascript:void(0)" v-on:click="delcom(nums)">
+                <i class="icon-trash">删除</i>
+            </a>
+        </th>
+
+
+    </tr>
+</template>
+<script>
+    var mycom = Vue.component('button-counter', {
+        data: function () {
+            return {
+                InfoList: { category: "0", po: "", content: "", votes: 0, count: 0 }
+            }
+        },
+        props: ["nums"],
+        template: '#frameTr',
+        methods: {
+            delcom: function (nums) {
+                var index = this.$parent.counter.findIndex(function (item) {
+                    if (item.nums == nums) {
+                        //  console.log(nums + "-=-=-=-=" + item.nums)
+                        return true;
+                    }
+                })
+                this.$parent.counter.splice(index, 1)
+
+            }
+        }
+    })
+    var app = new Vue({
+        el: "#editForm",
+        data: {
+            trNums: 0,
+            counter: [{ nums: 0 }],
+
+        },
+        methods: {
+            addCounter: function () {
+                this.trNums += 1
+                // console.log(Date.now())
+                this.counter.push({ nums: this.trNums })
+
+
+
+            },
+            SaveCounter: function (data) {
+                var CostInfos = []
+                console.log(this.$children.length);
+                for (var i = 0; i < this.$children.length; i++) {
+                    CostInfos.push(this.$children[i].InfoList)
+                }
+                console.log(CostInfos);
+                var url = "/index/Save";
+                var that = this
+                var formData = new FormData();
+                formData.append('obj', JSON.stringify(CostInfos));
+                axios.post(url, formData,
+                    {
+                        headers:
+                            { 'Content-Type': 'application/json; charset=UTF-8' }
+                    })
+                    .then(function (data) {
+                        console.log(data)
+
+                    }, function (error) {
+                        console.log(error)
+                    })
+
+            }
+        }
+    })
+</script>

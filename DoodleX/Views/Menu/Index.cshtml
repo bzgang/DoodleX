@@ -1,0 +1,589 @@
+﻿
+@{
+    ViewBag.Title = "菜单管理";
+    Layout = "~/Views/Shared/_LayoutPop.cshtml";
+}
+
+<div id="menuDiv">
+    <div class="page-content" style="margin-top:-6px;min-height:510px;">
+
+        <div class="row col-sm-3">
+            <div class="widget-box">
+                <div class="widget-header header-color-green2">
+                    <h4 class="lighter smaller">菜单管理</h4>
+                </div>
+                <div class="widget-body" style="height:450px;overflow-y:scroll;">
+
+                    <ul class="submenu">
+                        <li v-for="item in treeView" v-bind:key="item.Id">
+                            <a href="#" v-on:click="ExpandNode(item.Id)">
+                                <i class="icon-folder-open"></i>
+                                {{item.MenuChName}}
+                                <b class="arrow icon-angle-down" v-show="item.DXMenus.length>0"></b>
+                            </a>
+                            <ul class="submenu" v-show="Expand==item.Id">
+                                <li v-for="citem in item.DXMenus" v-bind:key="citem.Id">
+                                    <a href="#">
+                                        <i class=" icon-folder-close"></i>
+                                        {{citem.MenuChName}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+        <!--菜单显示树形结构-->
+        <div class="row col-sm-9">
+            <div> &nbsp;</div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label no-padding-right"> 菜单级别: </label>
+
+                <div class="col-sm-10">
+                    <select class="col-xs-10 col-sm-5">
+                        <option value="">--请选择--</option>
+                        <option value="一级">一级菜单</option>
+                        <option value="二级">二级菜单</option>
+                    </select>
+                </div>
+            </div>
+
+            <div> &nbsp;</div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label no-padding-right"> 关联父菜单: </label>
+
+                <div class="col-sm-10">
+                    <select class="col-xs-10 col-sm-5">
+                        <option value="">--请选择--</option>
+                        <option value="1">父菜单名称1</option>
+                        <option value="2">父菜单名称2</option>
+                    </select>
+                </div>
+            </div>
+            <div> &nbsp;</div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label no-padding-right">菜单名称: </label>
+
+                <div class="col-sm-10">
+                    <input type="text" placeholder="菜单名称" class="col-xs-10 col-sm-5" />
+
+                </div>
+            </div>
+
+            <div> &nbsp;</div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label no-padding-right">菜单地址: </label>
+
+                <div class="col-sm-10">
+                    <input type="text" placeholder="菜单地址" class="col-xs-10 col-sm-5" />
+
+                </div>
+            </div>
+
+            <div> &nbsp;</div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label no-padding-right"> 打开方式: </label>
+
+                <div class="col-sm-10">
+                    <!--<a href="/index/edit" target="_blank">_blank--弹出</a><br />
+                    <a href="/index/edit" target="_parent">_parent--本页</a><br />
+                    <a href="/index/edit" target="_self">_self--本页</a><br />
+                    <a href="/index/edit" target="_top">_top--本页</a><br />-->
+                    <select class="col-xs-10 col-sm-5">
+                        <option value="">--请选择--</option>
+                        <option value="_blank">_blank</option>
+                        <option value="_parent">_parent</option>
+                        <option value="_self">_self</option>
+                        <option value="_top">_top</option>
+                    </select>
+                </div>
+            </div>
+
+            <div> &nbsp;</div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label no-padding-right">显示图标: </label>
+                <div class="col-sm-10">
+                    <input type="text" placeholder="icon-home" class="col-xs-10 col-sm-5" />
+
+                    <a href="#iconsmodal" data-toggle="modal"> <span class="icon-eye-open btn-sm">查看图标样式</span></a>
+                </div>
+            </div>
+            <div> &nbsp;</div>
+            <div class="form-group bottom">
+                <div class="col-sm-12" style="background-color:#e4e6e9; text-align:right">
+                    <button class="btn btn-sm btn-success">提交</button>
+                    <button class="btn btn-sm btn-default">取消</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div><!-- 页面主题内容 -->
+    <div class="modal fade" tabindex="-1" id="iconsmodal">
+
+        <div class="modal-dialog" style="width:800px">
+            <div class="modal-content">
+
+                <div class="form-group">
+                    <div class="col-xs-6 col-sm-3" style="background-color:aliceblue">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="icon-adjust"></i>
+                                icon-adjust
+                            </li>
+
+                            <li>
+                                <i class="icon-asterisk"></i>
+                                icon-asterisk
+                            </li>
+
+                            <li>
+                                <i class="icon-ban-circle"></i>
+                                icon-ban-circle
+                            </li>
+
+                            <li>
+                                <i class="icon-bar-chart"></i>
+                                icon-bar-chart
+                            </li>
+
+                            <li>
+                                <i class="icon-barcode"></i>
+                                icon-barcode
+                            </li>
+
+                            <li>
+                                <i class="icon-beaker"></i>
+                                icon-beaker
+                            </li>
+
+                            <li>
+                                <i class="icon-beer"></i>
+                                icon-beer
+                            </li>
+
+                            <li>
+                                <i class="icon-bell"></i>
+                                icon-bell
+                            </li>
+
+                            <li>
+                                <i class="icon-bell-alt"></i>
+                                icon-bell-alt
+                            </li>
+
+                            <li>
+                                <i class="icon-bolt"></i>
+                                icon-bolt
+                            </li>
+
+                            <li>
+                                <i class="icon-book"></i>
+                                icon-book
+                            </li>
+
+                            <li>
+                                <i class="icon-bookmark"></i>
+                                icon-bookmark
+                            </li>
+
+                            <li>
+                                <i class="icon-bookmark-empty"></i>
+                                icon-bookmark-empty
+                            </li>
+
+                            <li>
+                                <i class="icon-briefcase"></i>
+                                icon-briefcase
+                            </li>
+
+                            <li>
+                                <i class="icon-bullhorn"></i>
+                                icon-bullhorn
+                            </li>
+
+                            <li>
+                                <i class="icon-calendar"></i>
+                                icon-calendar
+                            </li>
+
+                            <li>
+                                <i class="icon-camera"></i>
+                                icon-camera
+                            </li>
+
+                            <li>
+                                <i class="icon-camera-retro"></i>
+                                icon-camera-retro
+                            </li>
+
+                            <li>
+                                <i class="icon-certificate"></i>
+                                icon-certificate
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3" style="background-color:aliceblue">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="icon-check"></i>
+                                icon-check
+                            </li>
+
+                            <li>
+                                <i class="icon-check-empty"></i>
+                                icon-check-empty
+                            </li>
+
+                            <li>
+                                <i class="icon-circle"></i>
+                                icon-circle
+                            </li>
+
+                            <li>
+                                <i class="icon-circle-blank"></i>
+                                icon-circle-blank
+                            </li>
+
+                            <li>
+                                <i class="icon-cloud"></i>
+                                icon-cloud
+                            </li>
+
+                            <li>
+                                <i class="icon-cloud-download"></i>
+                                icon-cloud-download
+                            </li>
+
+                            <li>
+                                <i class="icon-cloud-upload"></i>
+                                icon-cloud-upload
+                            </li>
+
+                            <li>
+                                <i class="icon-coffee"></i>
+                                icon-coffee
+                            </li>
+
+                            <li>
+                                <i class="icon-cog"></i>
+                                icon-cog
+                            </li>
+
+                            <li>
+                                <i class="icon-cogs"></i>
+                                icon-cogs
+                            </li>
+
+                            <li>
+                                <i class="icon-comment"></i>
+                                icon-comment
+                            </li>
+
+                            <li>
+                                <i class="icon-comment-alt"></i>
+                                icon-comment-alt
+                            </li>
+
+                            <li>
+                                <i class="icon-comments"></i>
+                                icon-comments
+                            </li>
+
+                            <li>
+                                <i class="icon-comments-alt"></i>
+                                icon-comments-alt
+                            </li>
+
+                            <li>
+                                <i class="icon-credit-card"></i>
+                                icon-credit-card
+                            </li>
+
+                            <li>
+                                <i class="icon-dashboard"></i>
+                                icon-dashboard
+                            </li>
+
+                            <li>
+                                <i class="icon-desktop"></i>
+                                icon-desktop
+                            </li>
+
+                            <li>
+                                <i class="icon-download"></i>
+                                icon-download
+                            </li>
+
+                            <li>
+                                <i class="icon-download-alt"></i>
+                                icon-download-alt
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3" style="background-color:aliceblue">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="icon-edit"></i>
+                                icon-edit
+                            </li>
+
+                            <li>
+                                <i class="icon-envelope"></i>
+                                icon-envelope
+                            </li>
+
+                            <li>
+                                <i class="icon-envelope-alt"></i>
+                                icon-envelope-alt
+                            </li>
+
+                            <li>
+                                <i class="icon-exchange"></i>
+                                icon-exchange
+                            </li>
+
+                            <li>
+                                <i class="icon-exclamation-sign"></i>
+                                icon-exclamation-sign
+                            </li>
+
+                            <li>
+                                <i class="icon-external-link"></i>
+                                icon-external-link
+                            </li>
+
+                            <li>
+                                <i class="icon-eye-close"></i>
+                                icon-eye-close
+                            </li>
+
+                            <li>
+                                <i class="icon-eye-open"></i>
+                                icon-eye-open
+                            </li>
+
+                            <li>
+                                <i class="icon-facetime-video"></i>
+                                icon-facetime-video
+                            </li>
+
+                            <li>
+                                <i class="icon-fighter-jet"></i>
+                                icon-fighter-jet
+                            </li>
+
+                            <li>
+                                <i class="icon-film"></i>
+                                icon-film
+                            </li>
+
+                            <li>
+                                <i class="icon-filter"></i>
+                                icon-filter
+                            </li>
+
+                            <li>
+                                <i class="icon-fire"></i>
+                                icon-fire
+                            </li>
+
+                            <li>
+                                <i class="icon-flag"></i>
+                                icon-flag
+                            </li>
+
+                            <li>
+                                <i class="icon-folder-close"></i>
+                                icon-folder-close
+                            </li>
+
+                            <li>
+                                <i class="icon-folder-open"></i>
+                                icon-folder-open
+                            </li>
+
+                            <li>
+                                <i class="icon-folder-close-alt"></i>
+                                icon-folder-close-alt
+                            </li>
+
+                            <li>
+                                <i class="icon-folder-open-alt"></i>
+                                icon-folder-open-alt
+                            </li>
+
+                            <li>
+                                <i class="icon-food"></i>
+                                icon-food
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3" style="background-color:aliceblue">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="icon-gift"></i>
+                                icon-gift
+                            </li>
+
+                            <li>
+                                <i class="icon-glass"></i>
+                                icon-glass
+                            </li>
+
+                            <li>
+                                <i class="icon-globe"></i>
+                                icon-globe
+                            </li>
+
+                            <li>
+                                <i class="icon-group"></i>
+                                icon-group
+                            </li>
+
+                            <li>
+                                <i class="icon-hdd"></i>
+                                icon-hdd
+                            </li>
+
+                            <li>
+                                <i class="icon-headphones"></i>
+                                icon-headphones
+                            </li>
+
+                            <li>
+                                <i class="icon-heart"></i>
+                                icon-heart
+                            </li>
+
+                            <li>
+                                <i class="icon-heart-empty"></i>
+                                icon-heart-empty
+                            </li>
+
+                            <li>
+                                <i class="icon-home"></i>
+                                icon-home
+                            </li>
+
+                            <li>
+                                <i class="icon-inbox"></i>
+                                icon-inbox
+                            </li>
+
+                            <li>
+                                <i class="icon-info-sign"></i>
+                                icon-info-sign
+                            </li>
+
+                            <li>
+                                <i class="icon-key"></i>
+                                icon-key
+                            </li>
+
+                            <li>
+                                <i class="icon-leaf"></i>
+                                icon-leaf
+                            </li>
+
+                            <li>
+                                <i class="icon-laptop"></i>
+                                icon-laptop
+                            </li>
+
+                            <li>
+                                <i class="icon-legal"></i>
+                                icon-legal
+                            </li>
+
+                            <li>
+                                <i class="icon-lemon"></i>
+                                icon-lemon
+                            </li>
+
+                            <li>
+                                <i class="icon-lightbulb"></i>
+                                icon-lightbulb
+                            </li>
+
+                            <li>
+                                <i class="icon-lock"></i>
+                                icon-lock
+                            </li>
+
+                            <li>
+                                <i class="icon-unlock"></i>
+                                icon-unlock
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@*<style>
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity .5s;
+        }
+
+        .fade-enter,
+        .fade-leave-to
+        /* .fade-leave-active below version 2.1.8 */ {
+            opacity: 0;
+        }
+    </style>*@
+<!--利用Vue动画实现菜单的显示展开和折叠-->
+<script>
+    var menu = new Vue({
+        el: "#menuDiv",
+        data: {
+            Expand: 0,
+            treeView: []
+        },
+        created: function () {
+            this.LoadTreeView()
+        },
+        methods: {
+            ExpandNode: function (id) {
+                if (id == this.Expand) {
+                    this.Expand = 0
+                } else {
+                    this.Expand = id
+                }
+            },
+            LoadTreeView: function () { //加载所有菜单
+                var url = "/Menu/getTreeView";
+                var that = this
+                axios.post(url,
+                    {
+                        headers:
+                            { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
+                    })
+                    .then(function (data) {
+                        that.treeView = data.data.data
+                        console.log(that.treeView)
+                    }, function (error) {
+                        console.log(error);
+                    })
+            }
+        }
+
+    })
+</script>

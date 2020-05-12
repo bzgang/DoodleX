@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutPop.cshtml";
+}
+
+<h2>Login</h2>
+@Url.Action("/index", new { name = "test", age = 12 })
+<br />
+@Url.Action("/index", Html.ViewContext.RouteData.Values)
+<br />
+@Url.RouteUrl("BizManagement", new { controller = "home", action = "/index", Uid = 999, name = "测试" })
+<a href=@Url.RouteUrl("BizManagement", new { controller = "home", action = "/index" }) target="_blank">跳转至区域</a>
+<br />
+<a href="javascript:void(0)" onclick="window.open('/home/index')">登陆</a>
+<br />
+<a href="javascript:void(0)" onclick="window.open('/home/SetToken')">生成Token</a>--@ViewBag.token
+<br />
+<a href="javascript:void(0)" onclick="window.open('/home/GetToken')">验证token</a>--@ViewBag.status
+<br />
+<a href="javascript:void(0)" onclick="window.open('/home/SetEncod')">密码加密</a>--@ViewBag.password
+<br />
+<a href="javascript:void(0)" onclick="window.open('/home/CheckLogin')">验证登陆</a>--@ViewBag.flage
