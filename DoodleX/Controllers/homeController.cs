@@ -37,7 +37,7 @@ namespace DoodleX.Controllers
             {
                 { "username","admin" },
                 { "IP", "127.0.0.1" },
-                { "Browser","IE"}
+                { "Browser","IE "}
             };
             Session["token"] = JwtIdentity.SetJwtEncode(payload);
             ViewBag.token = Session["token"];

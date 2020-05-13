@@ -76,10 +76,6 @@ D:\testMyProject\DoodleX\DoodleX\bin\zh-Hans\System.Web.Webpages.Razor.resources
 D:\testMyProject\DoodleX\DoodleX\bin\zh-Hans\System.Web.Helpers.resources.dll
 D:\testMyProject\DoodleX\DoodleX\bin\zh-Hans\System.Web.Mvc.resources.dll
 D:\testMyProject\DoodleX\DoodleX\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
-D:\testMyProject\DoodleX\DoodleX\bin\Microsoft.Web.Infrastructure.dll
-D:\testMyProject\DoodleX\DoodleX\obj\Debug\DoodleX.csprojAssemblyReference.cache
-D:\testMyProject\DoodleX\DoodleX\obj\Debug\DoodleX.csproj.CoreCompileInputs.cache
-D:\testMyProject\DoodleX\DoodleX\obj\Debug\DoodleX.csproj.CopyComplete
 D:\testMyProject\DoodleX\DoodleX\bin\DoodleX.dll.config
 D:\testMyProject\DoodleX\DoodleX\bin\DoodleX.dll
 D:\testMyProject\DoodleX\DoodleX\bin\DoodleX.pdb
@@ -98,3 +94,4 @@ D:\testMyProject\DoodleX\DoodleX\bin\ICSharpCode.SharpZipLib.dll
 D:\testMyProject\DoodleX\DoodleX\bin\JWT.dll
 D:\testMyProject\DoodleX\DoodleX\bin\JWT.pdb
 D:\testMyProject\DoodleX\DoodleX\bin\JWT.xml
+D:\testMyProject\DoodleX\DoodleX\obj\Debug\DoodleX.csprojResolveAssemblyReference.cache
